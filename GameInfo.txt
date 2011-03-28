@@ -1,4 +1,4 @@
-"GameInfo"
+"GameInfo" 
 {
 	game	"Infected"
 	title	"Infected"
