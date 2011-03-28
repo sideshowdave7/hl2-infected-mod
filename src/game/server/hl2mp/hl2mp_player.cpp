@@ -254,6 +254,7 @@ void CHL2MP_Player::GiveDefaultItems( void )
 		GiveNamedItem( "weapon_crowbar" );
 	}
 	
+	GiveNamedItem( "weapon_grapple" );
 	GiveNamedItem( "weapon_pistol" );
 	GiveNamedItem( "weapon_smg1" );
 	GiveNamedItem( "weapon_frag" );

@@ -1887,29 +1887,29 @@ void CWeaponPhysCannon::PrimaryAttack( void )
 	{
 		if ( pEntity->m_takedamage == DAMAGE_NO )
 		{
-			DryFire();
-			return;
+			//DryFire();
+			//return;
 		}
 
 		if( GetOwner()->IsPlayer() )
 		{
 			// Don't let the player zap any NPC's except regular antlions and headcrabs.
-			if( pEntity->IsPlayer() )
-			{
-				DryFire();
-				return;
-			}
+			//if( pEntity->IsPlayer() )
+			//{
+			//	DryFire();
+			//	return;
+			//}
 		}
 
 		PuntNonVPhysics( pEntity, forward, tr );
 	}
 	else
 	{
-		if ( pEntity->VPhysicsIsFlesh( ) )
-		{
-			DryFire();
-			return;
-		}
+		//if ( pEntity->VPhysicsIsFlesh( ) )
+		//{
+		//	DryFire();
+		//	return;
+		//}
 		PuntVPhysics( pEntity, forward, tr );
 	}
 }
