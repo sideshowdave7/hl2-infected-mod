@@ -110,9 +110,10 @@ public:
 	//Tony; when model is changed, need to init some stuff.
 	virtual CStudioHdr *OnNewModel( void );
 	void InitializePoseParams( void );
+	void Freeze(int);
 
 private:
-	
+
 	C_HL2MP_Player( const C_HL2MP_Player & );
 	CHL2MPPlayerAnimState *m_PlayerAnimState;
 
@@ -122,6 +123,7 @@ private:
 
 	EHANDLE	m_hRagdoll;
 
+	int m_iOldGravity;
 	int	m_headYawPoseParam;
 	int	m_headPitchPoseParam;
 	float m_headYawMin;

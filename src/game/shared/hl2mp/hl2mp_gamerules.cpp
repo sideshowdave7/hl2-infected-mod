@@ -348,7 +348,7 @@ void CHL2MPRules::Think( void )
 			for ( int i = 1; i <= gpGlobals->maxClients; i++ )
 			{
 				CBasePlayer *pPlayer = UTIL_PlayerByIndex( i );
-
+				
 				if ( pPlayer && pPlayer->FragCount() >= flFragLimit )
 				{
 					GoToIntermission();

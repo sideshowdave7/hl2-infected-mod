@@ -339,6 +339,21 @@ void CWeaponShotgun::PrimaryAttack( void )
 	}
 
 	m_bNeedPump = true;
+
+	// set up the vectors and traceline
+	trace_t tr;
+
+	// do the traceline
+	UTIL_TraceLine( vecSrc, vecAiming, MASK_ALL, pPlayer, COLLISION_GROUP_NPC, &tr );
+
+	// check to see if we hit a NPC
+	if ( tr.m_pEnt )
+	{
+		
+			tr.m_pEnt->SetGravity(20); 
+			
+	}
+
 }
 
 //-----------------------------------------------------------------------------

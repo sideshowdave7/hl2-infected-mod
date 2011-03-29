@@ -145,12 +145,15 @@ public:
 	virtual	bool		ShouldCollide( int collisionGroup, int contentsMask ) const;
 	void HL2MPPushawayThink(void);
 
+	void Freeze(int);
+
 private:
 
+	
 	CHL2MPPlayerAnimState *m_PlayerAnimState;
 
 	CNetworkQAngle( m_angEyeAngles );
-
+    int m_iOldGravity;
 	int m_iLastWeaponFireUsercmd;
 	int m_iModelType;
 	CNetworkVar( bool, m_bSpawnInterpCounter );

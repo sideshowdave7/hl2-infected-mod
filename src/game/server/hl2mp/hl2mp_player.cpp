@@ -161,6 +161,11 @@ CHL2MP_Player::~CHL2MP_Player( void )
 
 }
 
+void CHL2MP_Player::Freeze(int time) {
+	m_iOldGravity = this->GetGravity();
+	this->SetGravity(20);
+}
+
 void CHL2MP_Player::UpdateOnRemove( void )
 {
 	if ( m_hRagdoll )

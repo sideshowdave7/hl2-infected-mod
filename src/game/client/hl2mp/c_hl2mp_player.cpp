@@ -94,6 +94,11 @@ C_HL2MP_Player::~C_HL2MP_Player( void )
 	m_PlayerAnimState->Release();
 }
 
+void C_HL2MP_Player::Freeze(int time) {
+	m_iOldGravity = this->GetGravity();
+	this->SetGravity(20);
+}
+
 int C_HL2MP_Player::GetIDTarget() const
 {
 	return m_iIDEntIndex;
