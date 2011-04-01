@@ -4,6 +4,7 @@
 	title	"Infected"
 	title2	"team infi"
 	type multiplayer_only
+	gamelogo 1
 	nomodels 0
 	nohimodel 1
 	nocrosshair 0
