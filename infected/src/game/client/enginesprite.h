@@ -52,7 +52,6 @@ public:
 	void DrawFrame( int frame, int x, int y, const wrect_t *prcSubRect );
 	void DrawFrameOfSize( int frame, int x, int y, int iWidth, int iHeight, const wrect_t *prcSubRect);
 	bool IsAVI();	
-	bool IsAVI();
 	bool IsBIK();
 	void GetTexCoordRange( float *pMinU, float *pMinV, float *pMaxU, float *pMaxV );
 
