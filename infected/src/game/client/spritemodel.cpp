@@ -300,6 +300,14 @@ bool CEngineSprite::IsAVI()
 
 
 //-----------------------------------------------------------------------------
+// Is the sprite an BIK?
+//-----------------------------------------------------------------------------
+bool CEngineSprite::IsBIK()
+{
+return ( m_hBIKMaterial != BIKMATERIAL_INVALID );
+}
+
+//-----------------------------------------------------------------------------
 // Returns the texture coordinate range	used to draw the sprite
 //-----------------------------------------------------------------------------
 void CEngineSprite::GetTexCoordRange( float *pMinU, float *pMinV, float *pMaxU, float *pMaxV )
