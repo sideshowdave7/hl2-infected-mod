@@ -111,7 +111,13 @@ public:
 	virtual CStudioHdr *OnNewModel( void );
 	void InitializePoseParams( void );
 
+	virtual bool isFrozen(void);
+	virtual void setIsFrozen(bool);
+	virtual float getFreezeTime();
+	virtual void Freeze();
+
 private:
+	
 	
 	C_HL2MP_Player( const C_HL2MP_Player & );
 	CHL2MPPlayerAnimState *m_PlayerAnimState;
@@ -154,6 +160,10 @@ private:
 	CNetworkVar( HL2MPPlayerState, m_iPlayerState );	
 
 	bool m_fIsWalking;
+
+	bool m_bIsFrozen;
+	float m_fFreezeTime;
+	
 };
 
 inline C_HL2MP_Player *ToHL2MPPlayer( CBaseEntity *pEntity )

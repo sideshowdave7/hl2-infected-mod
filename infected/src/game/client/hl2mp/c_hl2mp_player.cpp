@@ -94,6 +94,23 @@ C_HL2MP_Player::~C_HL2MP_Player( void )
 	m_PlayerAnimState->Release();
 }
 
+void C_HL2MP_Player::Freeze() {
+		setIsFrozen(true);
+		this->m_fFreezeTime = gpGlobals->curtime;
+}
+
+bool C_HL2MP_Player::isFrozen() {
+		return m_bIsFrozen;
+}
+
+void C_HL2MP_Player::setIsFrozen(bool b) {
+	this->m_bIsFrozen = b;
+}
+
+float C_HL2MP_Player::getFreezeTime() {
+	return m_fFreezeTime;
+}
+
 int C_HL2MP_Player::GetIDTarget() const
 {
 	return m_iIDEntIndex;

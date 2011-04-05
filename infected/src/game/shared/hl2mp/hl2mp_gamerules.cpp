@@ -348,6 +348,14 @@ void CHL2MPRules::Think( void )
 			for ( int i = 1; i <= gpGlobals->maxClients; i++ )
 			{
 				CBasePlayer *pPlayer = UTIL_PlayerByIndex( i );
+				mPlayer = (C_HL2MP_Player*)pPlayer;
+
+				if (mPlayer->isFrozen()) {
+					if ((mPlayer->getFreezeTime()) + 10 > gpGlobals->curtime) {
+						mPlayer->setIsFrozen(false);
+					}
+				}
+
 
 				if ( pPlayer && pPlayer->FragCount() >= flFragLimit )
 				{
