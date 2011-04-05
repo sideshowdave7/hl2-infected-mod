@@ -144,9 +144,17 @@ public:
 	// Player avoidance
 	virtual	bool		ShouldCollide( int collisionGroup, int contentsMask ) const;
 	void HL2MPPushawayThink(void);
+	
+	virtual bool isFrozen(void);
+	virtual void setIsFrozen(bool);
+	virtual float getFreezeTime();
+	virtual void Freeze();
 
 private:
 
+
+	bool m_bIsFrozen;
+	float m_fFreezeTime;
 	CHL2MPPlayerAnimState *m_PlayerAnimState;
 
 	CNetworkQAngle( m_angEyeAngles );

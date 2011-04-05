@@ -161,6 +161,23 @@ CHL2MP_Player::~CHL2MP_Player( void )
 
 }
 
+void CHL2MP_Player::Freeze() {
+		setIsFrozen(true);
+		this->m_fFreezeTime = gpGlobals->curtime;
+}
+
+bool CHL2MP_Player::isFrozen() {
+		return m_bIsFrozen;
+}
+
+void CHL2MP_Player::setIsFrozen(bool b) {
+	this->m_bIsFrozen = b;
+}
+
+float CHL2MP_Player::getFreezeTime() {
+	return m_fFreezeTime;
+}
+
 void CHL2MP_Player::UpdateOnRemove( void )
 {
 	if ( m_hRagdoll )

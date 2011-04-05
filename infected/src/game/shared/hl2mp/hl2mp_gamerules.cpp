@@ -10,6 +10,7 @@
 #include "gameeventdefs.h"
 #include <KeyValues.h>
 #include "ammodef.h"
+#include "hl2mp_player_shared.h"
 
 #ifdef CLIENT_DLL
 	#include "c_hl2mp_player.h"
@@ -348,7 +349,7 @@ void CHL2MPRules::Think( void )
 			for ( int i = 1; i <= gpGlobals->maxClients; i++ )
 			{
 				CBasePlayer *pPlayer = UTIL_PlayerByIndex( i );
-				mPlayer = (C_HL2MP_Player*)pPlayer;
+				CHL2MP_Player *mPlayer = (CHL2MP_Player*)pPlayer;
 
 				if (mPlayer->isFrozen()) {
 					if ((mPlayer->getFreezeTime()) + 10 > gpGlobals->curtime) {
