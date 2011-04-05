@@ -163,7 +163,8 @@ private:
 
 	bool m_bIsFrozen;
 	float m_fFreezeTime;
-	
+	float m_fNormGrav;
+
 };
 
 inline C_HL2MP_Player *ToHL2MPPlayer( CBaseEntity *pEntity )

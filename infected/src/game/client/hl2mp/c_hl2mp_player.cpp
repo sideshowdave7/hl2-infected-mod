@@ -95,6 +95,7 @@ C_HL2MP_Player::~C_HL2MP_Player( void )
 }
 
 void C_HL2MP_Player::Freeze() {
+		m_fNormGrav = this->GetGravity();
 		setIsFrozen(true);
 		this->m_fFreezeTime = gpGlobals->curtime;
 }
@@ -105,6 +106,8 @@ bool C_HL2MP_Player::isFrozen() {
 
 void C_HL2MP_Player::setIsFrozen(bool b) {
 	this->m_bIsFrozen = b;
+	if (b) this->SetGravity(20);
+	else this->SetGravity(m_fNormGrav);
 }
 
 float C_HL2MP_Player::getFreezeTime() {

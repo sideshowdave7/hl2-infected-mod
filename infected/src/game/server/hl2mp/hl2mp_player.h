@@ -152,7 +152,7 @@ public:
 
 private:
 
-
+	float m_fNormGravity;
 	bool m_bIsFrozen;
 	float m_fFreezeTime;
 	CHL2MPPlayerAnimState *m_PlayerAnimState;

@@ -162,6 +162,7 @@ CHL2MP_Player::~CHL2MP_Player( void )
 }
 
 void CHL2MP_Player::Freeze() {
+		m_fNormGravity = this->GetGravity();
 		setIsFrozen(true);
 		this->m_fFreezeTime = gpGlobals->curtime;
 }
@@ -172,6 +173,8 @@ bool CHL2MP_Player::isFrozen() {
 
 void CHL2MP_Player::setIsFrozen(bool b) {
 	this->m_bIsFrozen = b;
+	if (b) this->SetGravity(20);
+	else this->SetGravity(m_fNormGravity);
 }
 
 float CHL2MP_Player::getFreezeTime() {
