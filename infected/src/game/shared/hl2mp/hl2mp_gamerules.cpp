@@ -374,7 +374,8 @@ void CHL2MPRules::Think( void )
 				}
 			}
 
-			if (m_bHumansAlive) {
+			if (!m_bHumansAlive) {
+				UTIL_ClientPrintAll( HUD_PRINTCENTER, "Zombies have infected all the Humans!" );
 				GoToIntermission();
 				return;
 			}
