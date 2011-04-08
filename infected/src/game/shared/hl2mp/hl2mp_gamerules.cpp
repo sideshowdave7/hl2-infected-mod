@@ -772,13 +772,13 @@ void CHL2MPRules::DeathNotice( CBasePlayer *pVictim, const CTakeDamageInfo &info
 
 
 	//Deal with turning humans into zombies
-	if (pVictim->GetTeamNumber() == TEAM_COMBINE && pKiller->getTeamNumber() == TEAM_REBELS) {
+	if (pVictim->GetTeamNumber() == TEAM_COMBINE && pScorer->GetTeamNumber() == TEAM_REBELS) {
 		pVictim->ChangeTeam( TEAM_REBELS ); 
 	}
 	
 
 #endif
-
+	
 }
 
 void CHL2MPRules::ClientSettingsChanged( CBasePlayer *pPlayer )
