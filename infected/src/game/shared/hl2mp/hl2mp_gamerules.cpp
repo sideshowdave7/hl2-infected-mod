@@ -361,8 +361,6 @@ void CHL2MPRules::Think( void )
 					}
 				}
 
-
-
 				if ( pPlayer && pPlayer->FragCount() >= flFragLimit )
 				{
 					GoToIntermission();
