@@ -877,9 +877,9 @@ int CHL2MPRules::PlayerRelationship( CBaseEntity *pPlayer, CBaseEntity *pTarget 
 const char *CHL2MPRules::GetGameDescription( void )
 { 
 	if ( IsTeamplay() )
-		return "Team Deathmatch"; 
+		return "Zombie Survival"; 
 
-	return "Deathmatch"; 
+	return "Zombie Survival"; 
 } 
 
 
