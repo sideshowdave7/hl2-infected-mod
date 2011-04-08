@@ -193,8 +193,8 @@ char *sTeamNames[] =
 {
 	"Unassigned",
 	"Spectator",
-	"Combine",
-	"Rebels",
+	"Humans",
+	"Zombies",
 };
 
 CHL2MPRules::CHL2MPRules()
@@ -769,6 +769,14 @@ void CHL2MPRules::DeathNotice( CBasePlayer *pVictim, const CTakeDamageInfo &info
 		event->SetInt( "priority", 7 );
 		gameeventmanager->FireEvent( event );
 	}
+
+
+	//Deal with turning humans into zombies
+	if (pVictim->GetTeamNumber() == TEAM_COMBINE && pKiller->getTeamNumber() == TEAM_REBELS) {
+		pVictim->ChangeTeam( TEAM_REBELS ); 
+	}
+	
+
 #endif
 
 }
