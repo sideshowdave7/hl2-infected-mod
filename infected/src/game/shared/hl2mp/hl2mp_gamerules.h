@@ -156,6 +156,7 @@ private:
 	bool m_bCompleteReset;
 	bool m_bAwaitingReadyRestart;
 	bool m_bHeardAllPlayersReady;
+	bool m_bHumansAlive;
 
 
 };

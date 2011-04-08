@@ -219,6 +219,7 @@ CHL2MPRules::CHL2MPRules()
 	m_bCompleteReset = false;
 	m_bHeardAllPlayersReady = false;
 	m_bAwaitingReadyRestart = false;
+	m_bHumansAlive = true;
 
 #endif
 }
@@ -345,7 +346,10 @@ void CHL2MPRules::Think( void )
 		}
 		else
 		{
+			m_bHumansAlive = false;
 			// check if any player is over the frag limit
+			// check for freeze conditions
+			// check for game over conditions
 			for ( int i = 1; i <= gpGlobals->maxClients; i++ )
 			{
 				CBasePlayer *pPlayer = UTIL_PlayerByIndex( i );
@@ -358,11 +362,21 @@ void CHL2MPRules::Think( void )
 				}
 
 
+
 				if ( pPlayer && pPlayer->FragCount() >= flFragLimit )
 				{
 					GoToIntermission();
 					return;
 				}
+				
+				if ( pPlayer->GetTeamNumber() == TEAM_COMBINE) {
+					m_bHumansAlive = true;
+				}
+			}
+
+			if (m_bHumansAlive) {
+				GoToIntermission();
+				return;
 			}
 		}
 	}
