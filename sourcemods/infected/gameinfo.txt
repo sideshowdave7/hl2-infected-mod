@@ -27,6 +27,8 @@
 		{
 			Game				|gameinfo_path|.
 			Game				|all_source_engine_paths|hl2mp
+			Game				ep2
+			Game				episodic
 			Game				|all_source_engine_paths|hl2
 		}
 	}
