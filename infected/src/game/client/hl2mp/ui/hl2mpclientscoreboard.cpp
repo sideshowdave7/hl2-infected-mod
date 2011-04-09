@@ -92,7 +92,7 @@ void CHL2MPClientScoreBoardDialog::ApplySchemeSettings( vgui::IScheme *pScheme )
 	LoadControlSettings( "Resource/UI/scoreboard.res" );
 
 	m_bgColor = GetSchemeColor( "SectionedListPanel.BgColor", GetBgColor(), pScheme );
-	m_borderColor = pScheme->GetColor( "FgColor", Color( 0, 0, 0, 0 ) );
+	m_borderColor = pScheme->GetColor( "FgColor", Color( 75, 0, 0, 0 ) );
 
 	SetBgColor( Color( 0, 0, 0, 0 ) );
 	SetBorder( pScheme->GetBorder( "BaseBorder" ) );
@@ -100,7 +100,7 @@ void CHL2MPClientScoreBoardDialog::ApplySchemeSettings( vgui::IScheme *pScheme )
 	if ( m_pPlayerListDM )
 	{
 		m_pPlayerListDM->SetImageList( m_pImageList, false );
-		m_pPlayerListDM->SetBgColor( Color( 0, 0, 0, 0 ) );
+		m_pPlayerListDM->SetBgColor( Color( 0, 75, 0, 0 ) );
 		m_pPlayerListDM->SetBorder( NULL );
 		m_pPlayerListDM->SetVisible( false );
 	}
@@ -108,7 +108,7 @@ void CHL2MPClientScoreBoardDialog::ApplySchemeSettings( vgui::IScheme *pScheme )
 	if ( m_pPlayerListR )
 	{
 		m_pPlayerListR->SetImageList( m_pImageList, false );
-		m_pPlayerListR->SetBgColor( Color( 0, 0, 0, 0 ) );
+		m_pPlayerListR->SetBgColor( Color( 0, 0, 75, 0 ) );
 		m_pPlayerListR->SetBorder( NULL );
 		m_pPlayerListR->SetVisible( false );
 	}
@@ -116,7 +116,7 @@ void CHL2MPClientScoreBoardDialog::ApplySchemeSettings( vgui::IScheme *pScheme )
 	if ( m_pPlayerListC )
 	{
 		m_pPlayerListC->SetImageList( m_pImageList, false );
-		m_pPlayerListC->SetBgColor( Color( 0, 0, 0, 0 ) );
+		m_pPlayerListC->SetBgColor( Color( 0, 0, 0, 75 ) );
 		m_pPlayerListC->SetBorder( NULL );
 		m_pPlayerListC->SetVisible( false );
 	}

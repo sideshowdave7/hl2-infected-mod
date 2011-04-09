@@ -340,8 +340,8 @@ static void RepositionControl( Panel *pPanel )
 //-----------------------------------------------------------------------------
 void ApplyBackgroundSchemeSettings( EditablePanel *pWindow, vgui::IScheme *pScheme )
 {
-	Color bgColor = Color( 255, 255, 255, pScheme->GetColor( "BgColor", Color( 0, 0, 0, 0 ) )[3] );
-	Color fgColor = pScheme->GetColor( "FgColor", Color( 0, 0, 0, 0 ) );
+	Color bgColor = Color( 0, 255, 0, pScheme->GetColor( "BgColor", Color( 0, 255, 0, 0 ) )[3] );
+	Color fgColor = pScheme->GetColor( "FgColor", Color( 0, 0, 255, 0 ) );
 
 	if ( !pWindow )
 		return;

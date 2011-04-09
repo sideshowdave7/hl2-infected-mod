@@ -88,14 +88,14 @@ void CTeamPlayHud::ApplySchemeSettings( vgui::IScheme *pScheme )
 {
 	BaseClass::ApplySchemeSettings( pScheme );
 
-	SetFgColor( Color(0,0,0,0) );	//GetSchemeColor("RoundStateFg", pScheme) );
+	SetFgColor( Color(75,0,0,0) );	//GetSchemeColor("RoundStateFg", pScheme) );
 	m_hFont = pScheme->GetFont( "Default", true );
 
 	m_pBackground->SetBgColor( GetSchemeColor("BgColor", pScheme) );
 	m_pBackground->SetPaintBackgroundType( 2 );
 
 	SetAlpha( 255 );
-	SetBgColor( Color( 0, 0, 0, 0 ) );
+	SetBgColor( Color( 0, 75, 0, 0 ) );
 	SetPaintBackgroundType( 0 );
 }
 
