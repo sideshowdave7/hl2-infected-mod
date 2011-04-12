@@ -991,7 +991,7 @@ extern ConVar flashlight;
 //-----------------------------------------------------------------------------
 void CHL2MP_Player::FlashlightTurnOn( void )
 {
-	if( flashlight.GetInt() > 0 && IsAlive() )
+	if( flashlight.GetInt() > 0 && IsAlive() && GetTeamNumber() == TEAM_COMBINE )
 	{
 		AddEffects( EF_DIMLIGHT );
 		EmitSound( "HL2Player.FlashlightOn" );
