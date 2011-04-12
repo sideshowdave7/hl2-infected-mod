@@ -2428,10 +2428,10 @@ bool CGameMovement::CheckJumpButton( void )
 	{
 #if defined(HL2_DLL) || defined(HL2_CLIENT_DLL)
 		Assert( sv_gravity.GetFloat() == 600.0f );
-		flMul = 160.0f;	// approx. 21 units.
+		flMul = 260.0f;	// approx. 21 units.
 #else
 		Assert( sv_gravity.GetFloat() == 800.0f );
-		flMul = 268.3281572999747f;
+		flMul = 368.3281572999747f;
 #endif
 
 	}
