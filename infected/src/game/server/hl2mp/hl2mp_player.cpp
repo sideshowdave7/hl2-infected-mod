@@ -302,9 +302,13 @@ void CHL2MP_Player::PickDefaultSpawnTeam( void )
 			CTeam *pCombine = g_Teams[TEAM_COMBINE];
 			CTeam *pRebels = g_Teams[TEAM_REBELS];
 
+			if ( pRebels->GetNumPlayers() > 0 ) {
+				ChangeTeam( TEAM_COMBINE);
+			}
+
 			if ( pCombine == NULL || pRebels == NULL )
 			{
-				ChangeTeam( random->RandomInt( TEAM_COMBINE, TEAM_REBELS ) );
+				ChangeTeam( TEAM_REBELS );
 			}
 			else
 			{
