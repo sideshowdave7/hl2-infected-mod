@@ -1,9 +1,11 @@
 "GameInfo"
 {
+
 	game	"Infected"
 	title	"Infected"
 	title2	"Zombie Survival"
 	type 	multiplayer_only
+	gamelogo 0
 	nomodels 0
 	nohimodel 1
 	nocrosshair 1
