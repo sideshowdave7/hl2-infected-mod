@@ -15,9 +15,9 @@ Scheme
 	Colors
 	{
 		// base colors
-		"Orange"			"255 176 0 255"
-		"OrangeDim"			"255 176 0 120"
-		"LightOrange"		"188 112 0 128"
+		"Orange"			"0 255 0 255"
+		"OrangeDim"			"0 255 0 120"
+		"LightOrange"		"50 255 0 128"
 		
 		"Red"				"192 28 0 140"
 		"Black"				"0 0 0 196"
@@ -36,13 +36,13 @@ Scheme
 	// controls use these to determine their settings
 	BaseSettings
 	{
-		"FgColor"			"255 220 0 100"
+		"FgColor"			"100 255 100 100"
 		"BgColor"			"0 0 0 76"
 
 		"Panel.FgColor"			"255 220 0 100"
 		"Panel.BgColor"			"0 0 0 76"
 		
-		"BrightFg"		"255 220 0 255"
+		"BrightFg"		"150 220 150 255"
 
 		"DamagedBg"			"180 0 0 200"
 		"DamagedFg"			"180 0 0 230"
@@ -58,8 +58,8 @@ Scheme
 		"ZoomReticleColor"	"255 220 0 255"
 
 		// HL1-style HUD colors
-		"Yellowish"			"255 160 0 255"
-		"Normal"			"255 208 64 255"
+		"Yellowish"			"0 160 0 255"
+		"Normal"			"64 208 64 255"
 		"Caution"			"255 48 0 255"
 
 		// Top-left corner of the "Half-Life 2" on the main screen
