@@ -634,21 +634,31 @@ void CWeaponCrossbow::FireBolt( void )
 		return;
 
 #ifndef CLIENT_DLL
-	Vector vecAiming	= pOwner->GetAutoaimVector( 0 );	
-	Vector vecSrc		= pOwner->Weapon_ShootPosition();
 
-	QAngle angAiming;
-	VectorAngles( vecAiming, angAiming );
-
-	CCrossbowBolt *pBolt = CCrossbowBolt::BoltCreate( vecSrc, angAiming, GetHL2MPWpnData().m_iPlayerDamage, pOwner );
-
-	if ( pOwner->GetWaterLevel() == 3 )
+	//Fires three bolts, one 45 degrees to the left, one 45 degrees to the right, and one straight forward
+	for (int i = 0; i < 3; i++)
 	{
-		pBolt->SetAbsVelocity( vecAiming * BOLT_WATER_VELOCITY );
-	}
-	else
-	{
-		pBolt->SetAbsVelocity( vecAiming * BOLT_AIR_VELOCITY );
+		Vector vecAiming	= pOwner->GetAutoaimVector( 0 );
+		Vector vecSrc		= pOwner->Weapon_ShootPosition();
+
+		QAngle angAiming;
+		VectorAngles( vecAiming, angAiming );
+
+		angAiming.x -= 45;
+		angAiming.x += (45 * i);
+ 
+		AngleVectors(angAiming, &vecAiming);
+
+		CCrossbowBolt *pBolt = CCrossbowBolt::BoltCreate( vecSrc, angAiming, GetHL2MPWpnData().m_iPlayerDamage, pOwner );
+
+		if ( pOwner->GetWaterLevel() == 3 )
+		{
+			pBolt->SetAbsVelocity( vecAiming * BOLT_WATER_VELOCITY );
+		}
+		else
+		{
+			pBolt->SetAbsVelocity( vecAiming * BOLT_AIR_VELOCITY );
+		}
 	}
 
 #endif
