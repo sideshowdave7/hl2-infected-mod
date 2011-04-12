@@ -28,7 +28,7 @@ Resource/GameLogo.res
 		tall		100
 		visible		1
 		enabled		1
-		image		../Infected_Logo
+		image		../infected_logo
 		scaleImage	1		
 	}
 }
