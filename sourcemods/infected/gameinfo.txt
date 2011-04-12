@@ -3,7 +3,8 @@
 
 	game	"Infected"
 	title	"Infected"
-	title2	"Zombie Survival"
+	title2	"by Team INFI"
+
 	type 	multiplayer_only
 	gamelogo 0
 	nomodels 0
@@ -15,6 +16,12 @@
 		"test_hardware"		1
 	}
 
+
+
+	developer	"Team Infi"
+	developer_url	"http://www.desertlabs.net/"
+	icon		"icon.tga"
+	manual		"http://www.desertlabs.net/"
 
 	FileSystem
 	{
