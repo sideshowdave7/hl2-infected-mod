@@ -304,26 +304,8 @@ void CHL2MP_Player::PickDefaultSpawnTeam( void )
 
 			if ( pRebels->GetNumPlayers() > 0 ) {
 				ChangeTeam( TEAM_COMBINE);
-			}
-
-			if ( pCombine == NULL || pRebels == NULL )
-			{
+			} else {
 				ChangeTeam( TEAM_REBELS );
-			}
-			else
-			{
-				if ( pCombine->GetNumPlayers() > pRebels->GetNumPlayers() )
-				{
-					ChangeTeam( TEAM_REBELS );
-				}
-				else if ( pCombine->GetNumPlayers() < pRebels->GetNumPlayers() )
-				{
-					ChangeTeam( TEAM_COMBINE );
-				}
-				else
-				{
-					ChangeTeam( random->RandomInt( TEAM_COMBINE, TEAM_REBELS ) );
-				}
 			}
 		}
 	}
@@ -454,13 +436,12 @@ void CHL2MP_Player::SetPlayerTeamModel( void )
 	}
 	else if ( GetTeamNumber() == TEAM_REBELS )
 	{
-		if ( !Q_stristr( szModelName, "models/human") )
-		{
+		
 			int nHeads = ARRAYSIZE( g_ppszRandomCitizenModels );
 
 			g_iLastCitizenModel = ( g_iLastCitizenModel + 1 ) % nHeads;
 			szModelName = g_ppszRandomCitizenModels[g_iLastCitizenModel];
-		}
+		
 
 		m_iModelType = TEAM_REBELS;
 	}

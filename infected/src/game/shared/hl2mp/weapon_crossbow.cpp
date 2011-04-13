@@ -635,6 +635,8 @@ void CWeaponCrossbow::FireBolt( void )
 
 #ifndef CLIENT_DLL
 
+	CCrossbowBolt *pBolt[3];
+
 	//Fires three bolts, one 45 degrees to the left, one 45 degrees to the right, and one straight forward
 	for (int i = 0; i < 3; i++)
 	{
@@ -644,26 +646,29 @@ void CWeaponCrossbow::FireBolt( void )
 		QAngle angAiming;
 		VectorAngles( vecAiming, angAiming );
 
-		angAiming.x -= 45;
-		angAiming.x += (45 * i);
- 
+		angAiming.y -= 15;
+		angAiming.y += (15 * i);
+
+		vecSrc.y -= 30;
+		vecSrc.y  += (30*i);
+		
 		AngleVectors(angAiming, &vecAiming);
 
-		CCrossbowBolt *pBolt = CCrossbowBolt::BoltCreate( vecSrc, angAiming, GetHL2MPWpnData().m_iPlayerDamage, pOwner );
+		pBolt[i] = CCrossbowBolt::BoltCreate( vecSrc, angAiming, GetHL2MPWpnData().m_iPlayerDamage, pOwner );
 
 		if ( pOwner->GetWaterLevel() == 3 )
 		{
-			pBolt->SetAbsVelocity( vecAiming * BOLT_WATER_VELOCITY );
+			pBolt[i]->SetAbsVelocity( vecAiming * BOLT_WATER_VELOCITY);
 		}
 		else
 		{
-			pBolt->SetAbsVelocity( vecAiming * BOLT_AIR_VELOCITY );
+			pBolt[i]->SetAbsVelocity( vecAiming * BOLT_AIR_VELOCITY );
 		}
 	}
 
 #endif
 
-	m_iClip1--;
+	m_iClip1 -= 3;
 
 	pOwner->ViewPunch( QAngle( -2, 0, 0 ) );
 
