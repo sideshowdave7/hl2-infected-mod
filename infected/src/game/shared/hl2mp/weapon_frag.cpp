@@ -451,25 +451,28 @@ void CWeaponFrag::ThrowGrenade( CBasePlayer *pPlayer )
 			{
 				pPhysicsObject->SetVelocity( &vecThrow, NULL );
 			}
+
 		}
-		
-		pGrenade->SetDamage( GetHL2MPWpnData().m_iPlayerDamage );
-		pGrenade->SetDamageRadius( GRENADE_DAMAGE_RADIUS );
-	}
+	
 
-	trace_t tr;
-    // do the traceline
-    UTIL_TraceLine( vecSrc, vecAiming, MASK_ALL, pPlayer,COLLISION_GROUP_NPC, &tr );
-
-    // do if statements to check what we hit ... add if player is human, etc, etc
-    if ( tr.m_pEnt )
-    {
-		if (tr.p_ent->isPlayer())
+		CBaseEntity *list[1024];
+ 
+		// grab all of them within 350 units
+		int count = UTIL_EntitiesInSphere(list,1024,GetAbsOrigin()+Vector(0,10,0),50,MASK_PLAYERSOLID);
+ 
+		// for each of them
+		for ( int i = 0; i < count; i++ )
 		{
-		    // This will ignite the player
-			(CHL2MP_Player *) (pPlayer)->Ignite(10.0, false, 10.0, false)
+			// do if statements to check what we hit ... add if player is human, etc, etc
+			if ( list[i]->IsPlayer() )
+			{
+			
+					// This will ignite the player
+					pPlayer->Ignite(10.0, false, 10.0, false);
+			
+			}
 		}
-    }
+	}
 #endif
 
 	m_bRedraw = true;
@@ -501,24 +504,25 @@ void CWeaponFrag::LobGrenade( CBasePlayer *pPlayer )
 
 	if ( pGrenade )
 	{
-		pGrenade->SetDamage( GetHL2MPWpnData().m_iPlayerDamage );
-		pGrenade->SetDamageRadius( GRENADE_DAMAGE_RADIUS );
-	}
+	
 
-	trace_t tr;
-    // do the traceline
-    UTIL_TraceLine( vecSrc, vecAiming, MASK_ALL, pPlayer,COLLISION_GROUP_NPC, &tr );
-
-    // do if statements to check what we hit ... add if player is human, etc, etc
-    if ( tr.m_pEnt )
-    {
-		if (tr.p_ent->isPlayer())
+		CBaseEntity *list[1024];
+ 
+		// grab all of them within 350 units
+		int count = UTIL_EntitiesInSphere(list,1024,GetAbsOrigin()+Vector(0,10,0),50,MASK_PLAYERSOLID);
+ 
+		// for each of them
+		for ( int i = 0; i < count; i++ )
 		{
-		    // This will ignite the player
-			(CHL2MP_Player *) (pPlayer)->Ignite(10.0, false, 10.0, false)
+			// do if statements to check what we hit ... add if player is human, etc, etc
+			if ( list[i]->IsPlayer() )
+			{
+					// This will ignite the player
+					pPlayer->Ignite(10.0, false, 10.0, false);
+			
+			}
 		}
-    }
-
+	}
 #endif
 
 	WeaponSound( WPN_DOUBLE );
