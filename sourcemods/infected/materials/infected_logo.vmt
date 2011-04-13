@@ -1,4 +1,8 @@
 "UnlitGeneric"
 {
+	"$basetexture" "infected_logo"
+	"$surfaceprop" "Ice"
+	"$surfaceprop2" "Brick"
 	"$nolod" 1
+	"$translucent" 1
 }
