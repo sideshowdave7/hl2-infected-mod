@@ -17,16 +17,16 @@
 #include "weapon_hl2mpbasehlmpcombatweapon.h"
 
 #ifdef CLIENT_DLL
-#define CWeaponShotgun C_WeaponShotgun
+#define CWeaponFreeze C_WeaponFreeze
 #endif
 
 extern ConVar sk_auto_reload_time;
 extern ConVar sk_plr_num_shotgun_pellets;
 
-class CWeaponShotgun : public CBaseHL2MPCombatWeapon
+class CWeaponFreeze : public CBaseHL2MPCombatWeapon
 {
 public:
-	DECLARE_CLASS( CWeaponShotgun, CBaseHL2MPCombatWeapon );
+	DECLARE_CLASS( CWeaponFreeze, CBaseHL2MPCombatWeapon );
 
 	DECLARE_NETWORKCLASS(); 
 	DECLARE_PREDICTABLE();
@@ -63,15 +63,15 @@ public:
 
 	DECLARE_ACTTABLE();
 
-	CWeaponShotgun(void);
+	CWeaponFreeze(void);
 
 private:
-	CWeaponShotgun( const CWeaponShotgun & );
+	CWeaponFreeze( const CWeaponFreeze & );
 };
 
-IMPLEMENT_NETWORKCLASS_ALIASED( WeaponShotgun, DT_WeaponShotgun )
+IMPLEMENT_NETWORKCLASS_ALIASED( WeaponFreeze, DT_WeaponFreeze )
 
-BEGIN_NETWORK_TABLE( CWeaponShotgun, DT_WeaponShotgun )
+BEGIN_NETWORK_TABLE( CWeaponFreeze, DT_WeaponFreeze )
 #ifdef CLIENT_DLL
 	RecvPropBool( RECVINFO( m_bNeedPump ) ),
 	RecvPropBool( RECVINFO( m_bDelayedFire1 ) ),
@@ -86,7 +86,7 @@ BEGIN_NETWORK_TABLE( CWeaponShotgun, DT_WeaponShotgun )
 END_NETWORK_TABLE()
 
 #ifdef CLIENT_DLL
-BEGIN_PREDICTION_DATA( CWeaponShotgun )
+BEGIN_PREDICTION_DATA( CWeaponFreeze )
 	DEFINE_PRED_FIELD( m_bNeedPump, FIELD_BOOLEAN, FTYPEDESC_INSENDTABLE ),
 	DEFINE_PRED_FIELD( m_bDelayedFire1, FIELD_BOOLEAN, FTYPEDESC_INSENDTABLE ),
 	DEFINE_PRED_FIELD( m_bDelayedFire2, FIELD_BOOLEAN, FTYPEDESC_INSENDTABLE ),
@@ -94,10 +94,10 @@ BEGIN_PREDICTION_DATA( CWeaponShotgun )
 END_PREDICTION_DATA()
 #endif
 
-LINK_ENTITY_TO_CLASS( weapon_freeze, CWeaponShotgun );
+LINK_ENTITY_TO_CLASS( weapon_freeze, CWeaponFreeze );
 PRECACHE_WEAPON_REGISTER(weapon_freeze);
 
-acttable_t	CWeaponShotgun::m_acttable[] = 
+acttable_t	CWeaponFreeze::m_acttable[] = 
 {
 	{ ACT_MP_STAND_IDLE,				ACT_HL2MP_IDLE_SHOTGUN,					false },
 	{ ACT_MP_CROUCH_IDLE,				ACT_HL2MP_IDLE_CROUCH_SHOTGUN,			false },
@@ -114,7 +114,7 @@ acttable_t	CWeaponShotgun::m_acttable[] =
 	{ ACT_MP_JUMP,						ACT_HL2MP_JUMP_SHOTGUN,					false },
 };
 
-IMPLEMENT_ACTTABLE(CWeaponShotgun);
+IMPLEMENT_ACTTABLE(CWeaponFreeze);
 
 
 //-----------------------------------------------------------------------------
@@ -122,7 +122,7 @@ IMPLEMENT_ACTTABLE(CWeaponShotgun);
 // Input  :
 // Output :
 //-----------------------------------------------------------------------------
-bool CWeaponShotgun::StartReload( void )
+bool CWeaponFreeze::StartReload( void )
 {
 	if ( m_bNeedPump )
 		return false;
@@ -164,7 +164,7 @@ bool CWeaponShotgun::StartReload( void )
 // Input  :
 // Output :
 //-----------------------------------------------------------------------------
-bool CWeaponShotgun::Reload( void )
+bool CWeaponFreeze::Reload( void )
 {
 	// Check that StartReload was called first
 	if (!m_bInReload)
@@ -204,7 +204,7 @@ bool CWeaponShotgun::Reload( void )
 // Input  :
 // Output :
 //-----------------------------------------------------------------------------
-void CWeaponShotgun::FinishReload( void )
+void CWeaponFreeze::FinishReload( void )
 {
 	// Make shotgun shell invisible
 	SetBodygroup(1,1);
@@ -228,7 +228,7 @@ void CWeaponShotgun::FinishReload( void )
 // Input  :
 // Output :
 //-----------------------------------------------------------------------------
-void CWeaponShotgun::FillClip( void )
+void CWeaponFreeze::FillClip( void )
 {
 	CBaseCombatCharacter *pOwner  = GetOwner();
 	
@@ -251,7 +251,7 @@ void CWeaponShotgun::FillClip( void )
 // Input  :
 // Output :
 //-----------------------------------------------------------------------------
-void CWeaponShotgun::Pump( void )
+void CWeaponFreeze::Pump( void )
 {
 	CBaseCombatCharacter *pOwner  = GetOwner();
 
@@ -280,7 +280,7 @@ void CWeaponShotgun::Pump( void )
 //
 //
 //-----------------------------------------------------------------------------
-void CWeaponShotgun::DryFire( void )
+void CWeaponFreeze::DryFire( void )
 {
 	WeaponSound(EMPTY);
 	SendWeaponAnim( ACT_VM_DRYFIRE );
@@ -293,7 +293,7 @@ void CWeaponShotgun::DryFire( void )
 //
 //
 //-----------------------------------------------------------------------------
-void CWeaponShotgun::PrimaryAttack( void )
+void CWeaponFreeze::PrimaryAttack( void )
 {
 	// Only the player fires this way so we can cast
 	CBasePlayer *pPlayer = ToBasePlayer( GetOwner() );
@@ -360,7 +360,7 @@ void CWeaponShotgun::PrimaryAttack( void )
 //
 //
 //-----------------------------------------------------------------------------
-void CWeaponShotgun::SecondaryAttack( void )
+void CWeaponFreeze::SecondaryAttack( void )
 {
 	// Only the player fires this way so we can cast
 	CBasePlayer *pPlayer = ToBasePlayer( GetOwner() );
@@ -410,7 +410,7 @@ void CWeaponShotgun::SecondaryAttack( void )
 //-----------------------------------------------------------------------------
 // Purpose: Override so shotgun can do mulitple reloads in a row
 //-----------------------------------------------------------------------------
-void CWeaponShotgun::ItemPostFrame( void )
+void CWeaponFreeze::ItemPostFrame( void )
 {
 	CBasePlayer *pOwner = ToBasePlayer( GetOwner() );
 	if (!pOwner)
@@ -588,7 +588,7 @@ void CWeaponShotgun::ItemPostFrame( void )
 //-----------------------------------------------------------------------------
 // Purpose: Constructor
 //-----------------------------------------------------------------------------
-CWeaponShotgun::CWeaponShotgun( void )
+CWeaponFreeze::CWeaponFreeze( void )
 {
 	m_bReloadsSingly = true;
 
@@ -605,7 +605,7 @@ CWeaponShotgun::CWeaponShotgun( void )
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
-void CWeaponShotgun::ItemHolsterFrame( void )
+void CWeaponFreeze::ItemHolsterFrame( void )
 {
 	// Must be player held
 	if ( GetOwner() && GetOwner()->IsPlayer() == false )
@@ -639,7 +639,7 @@ void CWeaponShotgun::ItemHolsterFrame( void )
 // Purpose: 
 //==================================================
 /*
-void CWeaponShotgun::WeaponIdle( void )
+void CWeaponFreeze::WeaponIdle( void )
 {
 	//Only the player fires this way so we can cast
 	CBasePlayer *pPlayer = GetOwner()
