@@ -24,7 +24,7 @@
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
-#define GRENADE_TIMER	2.5f //Seconds
+#define GRENADE_TIMER	1.0f //Seconds
 
 #define GRENADE_PAUSED_NO			0
 #define GRENADE_PAUSED_PRIMARY		1
@@ -456,6 +456,20 @@ void CWeaponFrag::ThrowGrenade( CBasePlayer *pPlayer )
 		pGrenade->SetDamage( GetHL2MPWpnData().m_iPlayerDamage );
 		pGrenade->SetDamageRadius( GRENADE_DAMAGE_RADIUS );
 	}
+
+	trace_t tr;
+    // do the traceline
+    UTIL_TraceLine( vecSrc, vecAiming, MASK_ALL, pPlayer,COLLISION_GROUP_NPC, &tr );
+
+    // do if statements to check what we hit ... add if player is human, etc, etc
+    if ( tr.m_pEnt )
+    {
+		if (tr.p_ent->isPlayer())
+		{
+		    // This will ignite the player
+			(CHL2MP_Player *) (pPlayer)->Ignite(10.0, false, 10.0, false)
+		}
+    }
 #endif
 
 	m_bRedraw = true;
@@ -490,6 +504,21 @@ void CWeaponFrag::LobGrenade( CBasePlayer *pPlayer )
 		pGrenade->SetDamage( GetHL2MPWpnData().m_iPlayerDamage );
 		pGrenade->SetDamageRadius( GRENADE_DAMAGE_RADIUS );
 	}
+
+	trace_t tr;
+    // do the traceline
+    UTIL_TraceLine( vecSrc, vecAiming, MASK_ALL, pPlayer,COLLISION_GROUP_NPC, &tr );
+
+    // do if statements to check what we hit ... add if player is human, etc, etc
+    if ( tr.m_pEnt )
+    {
+		if (tr.p_ent->isPlayer())
+		{
+		    // This will ignite the player
+			(CHL2MP_Player *) (pPlayer)->Ignite(10.0, false, 10.0, false)
+		}
+    }
+
 #endif
 
 	WeaponSound( WPN_DOUBLE );
