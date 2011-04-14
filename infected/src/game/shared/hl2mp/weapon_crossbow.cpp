@@ -649,8 +649,8 @@ void CWeaponCrossbow::FireBolt( void )
 		angAiming.y -= 15;
 		angAiming.y += (15 * i);
 
-		vecSrc.y -= 30;
-		vecSrc.y  += (30*i);
+		vecSrc.y += 10;
+		vecSrc.y  -= (10*i);
 		
 		AngleVectors(angAiming, &vecAiming);
 
