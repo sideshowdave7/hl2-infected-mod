@@ -347,10 +347,10 @@ void CWeaponFreeze::PrimaryAttack( void )
     // do if statements to check what we hit ... add if player is human, etc, etc
     if ( tr.m_pEnt )
     {
-		if (tr.p_ent->isPlayer())
+		if (tr.m_pEnt->IsPlayer())
 		{
 		    // This will ignite the player
-			(CHL2MP_Player *) (pPlayer)->freeze();
+			((CHL2MP_Player*)(pPlayer))->Freeze();
 		}
     }
 }
