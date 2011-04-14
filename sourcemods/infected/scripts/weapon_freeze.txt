@@ -4,32 +4,28 @@ WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
 	"printname"	"#HL2_Freeze"
-	"viewmodel"				"models/weapons/v_shotgun.mdl"
-	"playermodel"			"models/weapons/w_shotgun.mdl"
-	"anim_prefix"			"shotgun"
-	"bucket"				"3"
-	"bucket_position"		"0"
+	"viewmodel"				"models/weapons/v_stunstick.mdl"
+	"playermodel"			"models/weapons/w_stunstick.mdl"
+	"anim_prefix"			"stunbaton"
+	"bucket"				"2"
+	"bucket_position"		"1"
 
-	"clip_size"				"6"
-	"primary_ammo"			"Buckshot"
+	"clip_size"				"-1"
+	"primary_ammo"			"None"
 	"secondary_ammo"		"None"
 
 	"weight"				"4"
 	"item_flags"			"0"
-	"damage"			"9"
+	"damage"			"0"
 
 	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
 	SoundData
 	{
 
-		"empty"				"Weapon_Shotgun.Empty"
-		"reload"			"Weapon_Shotgun.Reload"
-		"special1"			"Weapon_Shotgun.Special1"
-		"single_shot"		"Weapon_Shotgun.Single"
-		"double_shot"		"Weapon_Shotgun.Double"
-		// NPC WEAPON SOUNDS
-		"reload_npc"		"Weapon_Shotgun.NPC_Reload"
-		"single_shot_npc"	"Weapon_Shotgun.NPC_Single"
+		"single_shot"		"Weapon_StunStick.Swing"
+		"melee_miss"		"Weapon_StunStick.Melee_Miss"
+		"melee_hit"			"Weapon_StunStick.Melee_Hit"
+		"melee_hit_world"	"Weapon_StunStick.Melee_HitWorld"
 	}
 
 	// Weapon Sprite data is loaded by the Client DLL.
