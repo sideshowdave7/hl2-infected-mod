@@ -331,54 +331,41 @@ void CHL2MPRules::Think( void )
 		return;
 	}
 
-	if ( flFragLimit )
+
+	CTeam *pCombine = g_Teams[TEAM_COMBINE];
+	CTeam *pRebels = g_Teams[TEAM_REBELS];
+
+	m_bHumansAlive = false;
+	m_inumClients = 0;
+	// check if any player is over the frag limit
+	// check for freeze conditions
+	// check for game over conditions
+	for ( int i = 1; i <= gpGlobals->maxClients; i++ )
 	{
-		if( IsTeamplay() == true )
-		{
-			CTeam *pCombine = g_Teams[TEAM_COMBINE];
-			CTeam *pRebels = g_Teams[TEAM_REBELS];
+		CBasePlayer *pPlayer = UTIL_PlayerByIndex( i );
+		if (pPlayer != NULL) {
+			m_inumClients++;
+			CHL2MP_Player *mPlayer = (CHL2MP_Player*)pPlayer;
 
-			if ( pCombine->GetScore() >= flFragLimit || pRebels->GetScore() >= flFragLimit )
-			{
-				GoToIntermission();
-				return;
+			if (mPlayer->isFrozen()) {
+				if ((mPlayer->getFreezeTime()) + 10 > gpGlobals->curtime) {
+					mPlayer->setIsFrozen(false);
+				}
 			}
-		}
-		else
-		{
-			m_bHumansAlive = false;
-			// check if any player is over the frag limit
-			// check for freeze conditions
-			// check for game over conditions
-			for ( int i = 1; i <= gpGlobals->maxClients; i++ )
-			{
-				CBasePlayer *pPlayer = UTIL_PlayerByIndex( i );
-				CHL2MP_Player *mPlayer = (CHL2MP_Player*)pPlayer;
-
-				if (mPlayer->isFrozen()) {
-					if ((mPlayer->getFreezeTime()) + 10 > gpGlobals->curtime) {
-						mPlayer->setIsFrozen(false);
-					}
-				}
-
-				if ( pPlayer && pPlayer->FragCount() >= flFragLimit )
-				{
-					GoToIntermission();
-					return;
-				}
 				
-				if ( pPlayer->GetTeamNumber() == TEAM_COMBINE) {
-					m_bHumansAlive = true;
-				}
-			}
-
-			if (!m_bHumansAlive) {
-				UTIL_ClientPrintAll( HUD_PRINTCENTER, "Zombies have infected all the Humans!" );
-				GoToIntermission();
-				return;
+			if ( pPlayer->GetTeamNumber() == TEAM_COMBINE) {
+				m_bHumansAlive = true;
 			}
 		}
 	}
+
+	if (!m_bHumansAlive && m_inumClients > 1) {
+		UTIL_ClientPrintAll( HUD_PRINTCENTER, "Zombies have infected all the Humans!" );
+		GoToIntermission();
+		return;
+	}
+		
+		
 
 	if ( gpGlobals->curtime > m_tmNextPeriodicThink )
 	{		

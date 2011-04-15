@@ -157,6 +157,7 @@ private:
 	bool m_bAwaitingReadyRestart;
 	bool m_bHeardAllPlayersReady;
 	bool m_bHumansAlive;
+	int m_inumClients;
 
 
 };
