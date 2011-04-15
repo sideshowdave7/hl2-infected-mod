@@ -306,9 +306,9 @@ void CWeaponFreeze::PrimaryAttack( void )
 	// MUST call sound before removing a round from the clip of a CMachineGun
 	WeaponSound(SINGLE);
 
-	pPlayer->DoMuzzleFlash();
+	//pPlayer->DoMuzzleFlash();
 
-	SendWeaponAnim( ACT_VM_PRIMARYATTACK );
+	//SendWeaponAnim( ACT_VM_PRIMARYATTACK );
 
 	// Don't fire again until fire animation has completed
 	m_flNextPrimaryAttack = gpGlobals->curtime + SequenceDuration();
@@ -326,7 +326,7 @@ void CWeaponFreeze::PrimaryAttack( void )
 	info.m_pAttacker = pPlayer;
 
 	// Fire the bullets, and force the first shot to be perfectly accuracy
-	pPlayer->FireBullets( info );
+	//pPlayer->FireBullets( info );
 	
 	QAngle punch;
 	punch.Init( SharedRandomFloat( "shotgunpax", -2, -1 ), SharedRandomFloat( "shotgunpay", -2, 2 ), 0 );

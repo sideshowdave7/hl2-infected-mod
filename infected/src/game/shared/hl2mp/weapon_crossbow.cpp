@@ -668,7 +668,7 @@ void CWeaponCrossbow::FireBolt( void )
 
 #endif
 
-	m_iClip1 -= 3;
+	m_iClip1 -= 1;
 
 	pOwner->ViewPunch( QAngle( -2, 0, 0 ) );
 

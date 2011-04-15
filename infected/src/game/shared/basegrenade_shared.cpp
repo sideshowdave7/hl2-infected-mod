@@ -9,6 +9,7 @@
 #include "basegrenade_shared.h"
 #include "shake.h"
 #include "engine/IEngineSound.h"
+#include "hl2mp\hl2mp_player_shared.h"
 
 #if !defined( CLIENT_DLL )
 
@@ -16,7 +17,10 @@
 #include "entitylist.h"
 #include "GameStats.h"
 
+
 #endif
+
+
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
@@ -298,7 +302,9 @@ void CBaseGrenade::Detonate( void )
 		UTIL_TraceLine( GetAbsOrigin(), GetAbsOrigin() + Vector( 0, 0, -32), MASK_SHOT_HULL, this, COLLISION_GROUP_NONE, &tr );
 	}
 
-	Explode( &tr, DMG_BLAST );
+	//Explode( &tr, DMG_BLAST );
+
+
 
 	if ( GetShakeAmplitude() )
 	{
