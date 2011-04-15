@@ -145,7 +145,7 @@ void CGrenadeFrag::Touch( CBaseEntity *pOther ) {
 		CBaseEntity *list[1024];
  
 		// grab all of them within 350 units
-		int count = UTIL_EntitiesInSphere(list,1024,GetAbsOrigin(),50,MASK_PLAYERSOLID);
+		int count = UTIL_EntitiesInSphere(list,1024,GetAbsOrigin(),250,MASK_PLAYERSOLID);
  
 		// for each of them
 		for ( int i = 0; i < count; i++ )
