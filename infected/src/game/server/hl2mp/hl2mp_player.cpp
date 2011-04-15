@@ -100,7 +100,9 @@ END_DATADESC()
 //used to pick rebel team models
 const char *g_ppszRandomCitizenModels[] = 
 {
-	"models/zombie/classic.jpg",
+	"models/zombie/classic.mdl",
+	"models/zombie/poison.mdl",
+	"models/zombie/fast.mdl",
 };
 
 //used to pick combine team models
@@ -253,7 +255,9 @@ void CHL2MP_Player::GiveDefaultItems( void )
 		CBasePlayer::GiveAmmo( 18, "Buckshot");
 
 		GiveNamedItem( "weapon_crossbow" );
-		GiveNamedItem( "weapon_shotgun");
+		GiveNamedItem( "weapon_shotgun" );
+		GiveNamedItem( "weapon_frag" );
+		GiveNamedItem( "weapon_freeze" );
 
 	} 
 	//Zombie starting weapons
