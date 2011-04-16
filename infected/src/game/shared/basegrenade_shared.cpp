@@ -302,14 +302,25 @@ void CBaseGrenade::Detonate( void )
 		UTIL_TraceLine( GetAbsOrigin(), GetAbsOrigin() + Vector( 0, 0, -32), MASK_SHOT_HULL, this, COLLISION_GROUP_NONE, &tr );
 	}
 
-	//Explode( &tr, DMG_BLAST );
+		CBaseEntity *list[1024];
+ 
+		// grab all of them within 350 units
+		int count = UTIL_EntitiesInSphere(list,1024,vecSpot,250,MASK_PLAYERSOLID);
+ 
+		// for each of them
+		for ( int i = 0; i < count; i++ )
+		{
+			// do if statements to check what we hit ... add if player is human, etc, etc
+			if ( list[i]->IsPlayer() )
+			{
+			
+					// This will ignite the player
+					((CBasePlayer*)(list[i]))->Ignite(10.0, false, 10.0, false);
+			
+			}
+		}
 
 
-
-	if ( GetShakeAmplitude() )
-	{
-		UTIL_ScreenShake( GetAbsOrigin(), GetShakeAmplitude(), 150.0, 1.0, GetShakeRadius(), SHAKE_START );
-	}
 }
 
 
