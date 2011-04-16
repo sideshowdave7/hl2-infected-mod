@@ -1844,7 +1844,7 @@ void CHL2_Player::SuitPower_Update( void )
 void CHL2_Player::SuitPower_Initialize( void )
 {
 	m_HL2Local.m_bitsActiveDevices = 0x00000000;
-	m_HL2Local.m_flSuitPower = 100.0;
+	m_HL2Local.m_flSuitPower = 10000.0;
 	m_flSuitPowerLoad = 0.0;
 }
 
@@ -1884,7 +1884,7 @@ void CHL2_Player::SuitPower_Charge( float flPower )
 	if( m_HL2Local.m_flSuitPower > 100.0 )
 	{
 		// Full charge, clamp.
-		m_HL2Local.m_flSuitPower = 100.0;
+		m_HL2Local.m_flSuitPower = 10000.0;
 	}
 }
 
