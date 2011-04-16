@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models/FF_Zombie_Classic/Zombie_Body"
+	"$bumpmap" "Models/FF_zombie_classic/Zombie_Body_normal"
+	"$model" 1
+	// "$halflambert" 1
+}
