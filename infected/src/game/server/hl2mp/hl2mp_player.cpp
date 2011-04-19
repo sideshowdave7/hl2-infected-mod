@@ -101,8 +101,11 @@ END_DATADESC()
 const char *g_ppszRandomCitizenModels[] = 
 {
 	"models/zombie/classic.mdl",
-	"models/zombie/poison.mdl",
-	"models/zombie/fast.mdl",
+	"models/zombie/classi2.mdl",
+	"models/zombie/ffs2.mdl",
+	"models/zombie/ffst.mdl",
+	"models/zombie/classic_anims.mdl",
+	
 };
 
 //used to pick combine team models
