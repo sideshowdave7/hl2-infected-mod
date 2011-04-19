@@ -2,7 +2,7 @@
 {
 
 	game	"Infected"
-	title	"Infected"
+
 	title2	"by Team INFI"
 
 	type 	multiplayer_only
@@ -36,10 +36,10 @@
 		SearchPaths
 		{
 			Game				|gameinfo_path|.
+			Game				|all_source_engine_paths|hl2
 			Game				|all_source_engine_paths|hl2mp
 			Game				|all_source_engine_paths|ep2
 			Game				|all_source_engine_paths|episodic
-			Game				|all_source_engine_paths|hl2
 		}
 	}
 }
