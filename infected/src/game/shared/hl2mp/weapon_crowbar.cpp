@@ -78,7 +78,7 @@ CWeaponCrowbar::CWeaponCrowbar( void )
 //-----------------------------------------------------------------------------
 float CWeaponCrowbar::GetDamageForActivity( Activity hitActivity )
 {
-	return 25.0f;
+	return 20.0f;
 }
 
 //-----------------------------------------------------------------------------
