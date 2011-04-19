@@ -1,6 +1,6 @@
 "VertexLitGeneric"
 {
-	"$basetexture" "models/Molotov/MolotovUVtextured"
+	"$basetexture" "models/MolotovUVtextured"
 	"$normalmapalphaenvmapmask" 1
         "$envmapcontrast" 1
         "$model" 1
