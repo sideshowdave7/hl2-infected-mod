@@ -26,8 +26,8 @@
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
-#define	CROWBAR_RANGE	75.0f
-#define	CROWBAR_REFIRE	0.4f
+#define	CROWBAR_RANGE	50.0f
+#define	CROWBAR_REFIRE	1.0f
 
 
 //-----------------------------------------------------------------------------
