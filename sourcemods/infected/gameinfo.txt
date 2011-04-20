@@ -36,11 +36,12 @@
 
 		SearchPaths
 		{
-			Game				|gameinfo_path|.
-			Game				|all_source_engine_paths|hl2mp
-			Game				|all_source_engine_paths|hl2
-			Game				|all_source_engine_paths|ep2
-			Game				|all_source_engine_paths|episodic
+			Game	|gameinfo_path|.	// Your mod folder should always come first
+			Game	|all_source_engine_paths|ep2
+			Game	|all_source_engine_paths|episodic	// Ep2 also uses some Ep1 content
+			Game	|all_source_engine_paths|portal
+			Game	|all_source_engine_paths|hl2	// HL2 should always come last
+
 		}
 	}
 }
