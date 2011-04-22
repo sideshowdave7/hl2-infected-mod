@@ -100,11 +100,7 @@ END_DATADESC()
 //used to pick rebel team models
 const char *g_ppszRandomCitizenModels[] = 
 {
-	"models/zombie/classic.mdl",
-	"models/zombie/classi2.mdl",
-	"models/zombie/ffs2.mdl",
-	"models/zombie/ffst.mdl",
-	"models/zombie/classic_anims.mdl",
+	"models/humans/group03/male_04.mdl",
 	
 };
 
@@ -443,12 +439,13 @@ void CHL2MP_Player::SetPlayerTeamModel( void )
 	}
 	else if ( GetTeamNumber() == TEAM_REBELS )
 	{
-		
+		if ( !Q_stristr( szModelName, "models/human") )
+		{
 			int nHeads = ARRAYSIZE( g_ppszRandomCitizenModels );
 
 			g_iLastCitizenModel = ( g_iLastCitizenModel + 1 ) % nHeads;
 			szModelName = g_ppszRandomCitizenModels[g_iLastCitizenModel];
-		
+		}
 
 		m_iModelType = TEAM_REBELS;
 	}
