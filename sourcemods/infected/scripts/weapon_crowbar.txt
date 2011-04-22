@@ -4,8 +4,8 @@ WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
 	"printname"	"#HL2_Crowbar"
-	"viewmodel"				"models/weapons/v_crowbar.mdl"
-	"playermodel"			"models/weapons/w_crowbar.mdl"
+	"viewmodel"				"models\morrowind\dragon\dagger\v_dragondagger.mdl"
+	"playermodel"			"models\morrowind\dragon\dagger\w_dragondagger.mdl"
 	"anim_prefix"			"crowbar"
 	"bucket"				"0"
 	"bucket_position"		"0"

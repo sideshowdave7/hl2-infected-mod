@@ -1,35 +1,30 @@
-// Freeze weapon
+// freeze weapon
 
 WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"	"#HL2_Freeze"
-	"viewmodel"				"models/weapons/v_shotgun.mdl"
-	"playermodel"			"models/weapons/v_shotgun.mdl"
-	"anim_prefix"			"shotgun"
-	"bucket"				"3"
-	"bucket_position"		"3"
+	"printname"	"#HL2_StunBaton"
+	"viewmodel"				"models/weapons/v_gordonstick.mdl"
+	"playermodel"			"models/weapons/v_gordonstick.mdl"
+	"anim_prefix"			"stunbaton"
+	"bucket"				"0"
+	"bucket_position"		"1"
 
 	"clip_size"				"-1"
-	"primary_ammo"			"Buckshot"
+	"primary_ammo"			"None"
 	"secondary_ammo"		"None"
 
-	"weight"				"4"
+	"weight"				"0"
 	"item_flags"			"0"
-	"damage"			"9"
 
 	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
 	SoundData
 	{
 
-		"empty"				"Weapon_Shotgun.Empty"
-		"reload"			"Weapon_Shotgun.Reload"
-		"special1"			"Weapon_Shotgun.Special1"
-		"single_shot"		"Weapon_Shotgun.Single"
-		"double_shot"		"Weapon_Shotgun.Double"
-		// NPC WEAPON SOUNDS
-		"reload_npc"		"Weapon_Shotgun.NPC_Reload"
-		"single_shot_npc"	"Weapon_Shotgun.NPC_Single"
+		"single_shot"		"Weapon_StunStick.Swing"
+		"melee_miss"		"Weapon_StunStick.Melee_Miss"
+		"melee_hit"			"Weapon_StunStick.Melee_Hit"
+		"melee_hit_world"	"Weapon_StunStick.Melee_HitWorld"
 	}
 
 	// Weapon Sprite data is loaded by the Client DLL.
@@ -38,28 +33,39 @@ WeaponData
 		"weapon"
 		{
 				"font"		"WeaponIcons"
-				"character"	"b"
+				"character"	"n"
 		}
 		"weapon_s"
-		{	
+		{
 				"font"		"WeaponIconsSelected"
-				"character"	"b"
+				"character"	"n"
 		}
 		"ammo"
 		{
 				"font"		"WeaponIcons"
-				"character"	"s"
+				"character"	"n"
+		}
+		"ammo2"
+		{
+				"file"		"sprites/640hud7"
+				"x"			"48"
+				"y"			"72"
+				"width"		"24"
+				"height"	"24"
 		}
 		"crosshair"
-		{
-				"font"		"Crosshairs"
-				"character"	"Q"
-		}
-		"autoaim"
 		{
 				"file"		"sprites/crosshairs"
 				"x"			"0"
 				"y"			"48"
+				"width"		"24"
+				"height"	"24"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"48"
+				"y"			"72"
 				"width"		"24"
 				"height"	"24"
 		}

@@ -4,8 +4,8 @@ WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
 	"printname"	"#HL2_Zombie"
-	"viewmodel"				"models/weapons/v_crowbar.mdl"
-	"playermodel"			"models/weapons/w_crowbar.mdl"
+	"viewmodel"				"models/weapons/v_katana.mdl"
+	"playermodel"			"models/weapons/w_katana.mdl"
 	"anim_prefix"			"crowbar"
 	"bucket"				"0"
 	"bucket_position"		"2"
