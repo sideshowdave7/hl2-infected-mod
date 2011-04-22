@@ -31,17 +31,14 @@
 
 		//Orange box sdk allows an extra appid to be defined here to mount additional content. 320 is HL2MP
 		AdditionalContentId			320
-		AdditionalContentId			420
+		//AdditionalContentId			420
 		
 
 		SearchPaths
 		{
-			Game	|gameinfo_path|.	// Your mod folder should always come first
-			Game	|all_source_engine_paths|ep2
-			Game	|all_source_engine_paths|episodic	// Ep2 also uses some Ep1 content
-			Game	|all_source_engine_paths|portal
-			Game	|all_source_engine_paths|hl2	// HL2 should always come last
-
+			Game				|gameinfo_path|.
+			Game				|all_source_engine_paths|hl2mp
+			Game				|all_source_engine_paths|hl2
 		}
 	}
 }
