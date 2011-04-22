@@ -1,0 +1,8 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\weapons\gstick/gstick"
+	"$selfillum" "1"
+	"$bumpmap" "models\weapons\gstick\gstick_b"
+	"$envmap" "env_cubemap"
+	"$envmapcontrast" "1"
+}

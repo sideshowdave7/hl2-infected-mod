@@ -1,0 +1,15 @@
+"vertexlitgeneric"
+{
+
+	"$baseTexture" "Models/Weapons/v_crossbow/crossbow dirtmap"
+	"$bumpmap" "Models/Weapons/v_crossbow/normal_map_composite copy"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" 1
+
+// -- From here down is new stuff which will only be applied if $phong is set to 1 --
+	"$phong" "1"
+	"$phongboost"	"2"
+	"$phongexponent" "64"
+	"$phongfresnelranges"	"[0 0.5 1]"
+
+}
