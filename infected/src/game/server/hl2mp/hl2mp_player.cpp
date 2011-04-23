@@ -261,7 +261,7 @@ void CHL2MP_Player::GiveDefaultItems( void )
 	} 
 	//Zombie starting weapons
 	else if ( this->GetTeamNumber() == TEAM_REBELS) {
-		GiveNamedItem( "weapon_crowbar");
+		GiveNamedItem( "weapon_zombie");
 	}
 
 	const char *szDefaultWeaponName = engine->GetClientConVarValue( engine->IndexOfEdict( edict() ), "cl_defaultweapon" );
