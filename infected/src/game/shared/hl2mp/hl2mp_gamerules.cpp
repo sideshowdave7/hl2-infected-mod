@@ -348,7 +348,7 @@ void CHL2MPRules::Think( void )
 		
 
 			if (pPlayer->isFrozen()) {
-				if ((pPlayer->getFreezeTime()) + 10 > gpGlobals->curtime) {
+				if ((pPlayer->getFreezeTime()) + 10000 > gpGlobals->curtime) {
 					pPlayer->setIsFrozen(false);
 				}
 			}

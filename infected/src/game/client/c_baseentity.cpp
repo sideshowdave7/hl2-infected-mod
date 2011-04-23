@@ -954,7 +954,9 @@ bool C_BaseEntity::isFrozen() {
 
 void C_BaseEntity::setIsFrozen(bool b) {
 	this->m_bIsFrozen = b;
-	if (b) this->SetGravity(20);
+	if (b) {
+		this->SetGravity(20000);
+	}
 	else this->SetGravity(m_fNormGravity);
 }
 
