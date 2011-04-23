@@ -24,7 +24,7 @@
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
-#define GRENADE_TIMER	1.0f //Seconds
+#define GRENADE_TIMER	.5f //Seconds
 
 #define GRENADE_PAUSED_NO			0
 #define GRENADE_PAUSED_PRIMARY		1
@@ -454,6 +454,7 @@ void CWeaponFrag::ThrowGrenade( CBasePlayer *pPlayer )
 
 		}
 
+		pGrenade->Detonate();
 		CBaseEntity *list[1024];
  
 		// grab all of them within 350 units
