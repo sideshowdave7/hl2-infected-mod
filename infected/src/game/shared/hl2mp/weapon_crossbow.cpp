@@ -646,8 +646,8 @@ void CWeaponCrossbow::FireBolt( void )
 		QAngle angAiming;
 		VectorAngles( vecAiming, angAiming );
 
-		angAiming.y -= 15;
-		angAiming.y += (15 * i);
+		angAiming.y -= 10;
+		angAiming.y += (10 * i);
 
 		vecSrc.y += 3;
 		vecSrc.y  -= (3*i);
