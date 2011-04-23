@@ -28,13 +28,15 @@
 		AdditionalContentId 320 //HL2 Deatmatch
 		AdditionalContentId 220 //HL2
 		AdditionalContentId 420 //Ep2
+ 		AdditionalContentId 22321  //morrowwind
+
 
 
 		SearchPaths
 		{				
-			Game	|gameinfo_path|.			// Your mod folder should always come first
+			Game	|gameinfo_path|.			
 			Game 	|all_source_engine_Paths|hl2mp
-			Game	|all_source_engine_paths|hl2		// HL2 should always come last
+			Game	|all_source_engine_paths|hl2		
 			Game	|all_source_engine_paths|ep2
 		}
 	}
