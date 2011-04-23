@@ -346,10 +346,9 @@ void CWeaponFreeze::PrimaryAttack( void )
     // do if statements to check what we hit ... add if player is human, etc, etc
     if ( tr.m_pEnt )
     {
-		if (tr.m_pEnt->IsPlayer())
-		{
+		if (tr.m_pEnt->IsInAnyTeam()	{
 		    // This will ignite the player
-			((CHL2MP_Player*)(pPlayer))->Freeze();
+			((CHL2MP_Player*)(tr))->Freeze();
 		}
     }
 }
