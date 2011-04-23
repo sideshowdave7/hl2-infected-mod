@@ -4205,16 +4205,7 @@ bool CBaseEntity::IsInTeam( CTeam *pTeam ) const
 //-----------------------------------------------------------------------------
 int CBaseEntity::GetTeamNumber( void ) const
 {
-	return m_iTeamNum;
-}
-
-//-----------------------------------------------------------------------------
-// Purpose: 
-//-----------------------------------------------------------------------------
-bool CBaseEntity::IsInAnyTeam( void ) const
-{
-	return ( GetTeam() != NULL );
-}
+A
 
 //-----------------------------------------------------------------------------
 // Purpose: Returns the type of damage that this entity inflicts.

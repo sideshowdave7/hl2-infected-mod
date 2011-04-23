@@ -308,7 +308,7 @@ void CWeaponFreeze::PrimaryAttack( void )
 
 	//pPlayer->DoMuzzleFlash();
 
-	//SendWeaponAnim( ACT_VM_PRIMARYATTACK );
+	SendWeaponAnim( ACT_VM_PRIMARYATTACK );
 
 	// Don't fire again until fire animation has completed
 	m_flNextPrimaryAttack = gpGlobals->curtime + SequenceDuration();
@@ -326,7 +326,7 @@ void CWeaponFreeze::PrimaryAttack( void )
 	info.m_pAttacker = pPlayer;
 
 	// Fire the bullets, and force the first shot to be perfectly accuracy
-	//pPlayer->FireBullets( info );
+	pPlayer->FireBullets( info );
 	
 	QAngle punch;
 	punch.Init( SharedRandomFloat( "shotgunpax", -2, -1 ), SharedRandomFloat( "shotgunpay", -2, 2 ), 0 );
@@ -338,7 +338,6 @@ void CWeaponFreeze::PrimaryAttack( void )
 		pPlayer->SetSuitUpdate("!HEV_AMO0", FALSE, 0); 
 	}
 
-	m_bNeedPump = true;
 
 	trace_t tr;
     // do the traceline

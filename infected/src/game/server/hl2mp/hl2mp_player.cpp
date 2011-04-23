@@ -251,7 +251,8 @@ void CHL2MP_Player::GiveDefaultItems( void )
 
 	//Human starting weapons
 	if (this->GetTeamNumber() == TEAM_COMBINE) {
-		CBasePlayer::GiveAmmo( 18, "Buckshot");
+		CBasePlayer::GiveAmmo( 36, "Buckshot");
+		CBasePlayer::GiveAmmo( 10, "Crossbow");
 
 		GiveNamedItem( "weapon_crossbow" );
 		GiveNamedItem( "weapon_shotgun" );
