@@ -5,7 +5,7 @@
 <style type="text/css">
 body	{
 		font-family:Verdana,Tahoma;
-		color:#B0FF00;
+		color:#A0FF00;
 		background:#000000;
 		margin-left:8px;
 		margin-top:0px;
@@ -30,7 +30,10 @@ a:hover {
 </head>
 <body scroll="no">
 <h1><i>INFECTED</i></h1>
-<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/e2uD0z8A1eQ" frameborder="0" allowfullscreen></iframe>
+
+You are playing Infected, a HAlf-life 2:DeathMatch Mod.  Infected is a Humans versus Zombies DeathMatch.  As a Human, stay alive as long as possible by slowing down the Zombies coming after you.  If you are killed, you have become Infected meaning you are now a Zombie.  Try to be the last Zombie alive by keeping all the Zombies away from you.
+
+To view the inspiration to this game, please <a href="http://youtu.be/e2uD0z8A1eQ">click-here.</a>
 
 <h2>Authors:</h2>
 <ul>
@@ -40,8 +43,6 @@ a:hover {
   <li>Adam Durant</li>
   <li>James Hulse</li>
 </ul>
-You are playing Infected, a HAlf-life 2:DeathMatch Mod
-
-Please Enjoy!
 </body>
 </html>
+
