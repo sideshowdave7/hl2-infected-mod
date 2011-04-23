@@ -339,6 +339,8 @@ void CHL2MP_Player::Spawn(void)
 
 		RemoveEffects( EF_NODRAW );
 		
+		SetPreventWeaponPickup(false);
+
 		GiveDefaultItems();
 
 		if (GetTeamNumber() == TEAM_REBELS) {
