@@ -3,11 +3,9 @@
 <head>
 <title>HL2MP MOTD</title>
 <style type="text/css">
-pre 	{
-		font-family:Verdana,Tahoma;
-		color:#FFB000;
-    	}
 body	{
+		font-family:Verdana,Tahoma;
+		color:#B0FF00;
 		background:#000000;
 		margin-left:8px;
 		margin-top:0px;
@@ -31,10 +29,19 @@ a:hover {
 </style>
 </head>
 <body scroll="no">
-<pre>
+<h1><i>INFECTED</i></h1>
+<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/e2uD0z8A1eQ" frameborder="0" allowfullscreen></iframe>
+
+<h2>Authors:</h2>
+<ul>
+  <li>David Hurst</li>
+  <li>Mavin Martin</li>
+  <li>Brendan Wanlass</li>
+  <li>Adam Durant</li>
+  <li>James Hulse</li>
+</ul>
 You are playing Infected, a HAlf-life 2:DeathMatch Mod
 
 Please Enjoy!
-</pre>
 </body>
 </html>
