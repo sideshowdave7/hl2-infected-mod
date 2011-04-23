@@ -582,7 +582,17 @@ public:
 	bool		NameMatches( string_t nameStr );
 	bool		ClassMatches( string_t nameStr );
 
+	virtual bool isFrozen(void);
+	virtual void setIsFrozen(bool);
+	virtual float getFreezeTime();
+	virtual void Freeze();
+
 private:
+
+	float m_fNormGravity;
+	bool m_bIsFrozen;
+	float m_fFreezeTime;
+
 	bool		NameMatchesComplex( const char *pszNameOrWildcard );
 	bool		ClassMatchesComplex( const char *pszClassOrWildcard );
 	void		TransformStepData_WorldToParent( CBaseEntity *pParent );

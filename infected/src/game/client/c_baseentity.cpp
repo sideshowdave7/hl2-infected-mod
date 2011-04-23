@@ -942,6 +942,26 @@ C_BaseEntity::C_BaseEntity() :
 }
 
 
+	void C_BaseEntity::Freeze() {
+		m_fNormGravity = this->GetGravity();
+		setIsFrozen(true);
+		this->m_fFreezeTime = gpGlobals->curtime;
+}
+
+bool C_BaseEntity::isFrozen() {
+		return m_bIsFrozen;
+}
+
+void C_BaseEntity::setIsFrozen(bool b) {
+	this->m_bIsFrozen = b;
+	if (b) this->SetGravity(20);
+	else this->SetGravity(m_fNormGravity);
+}
+
+float C_BaseEntity::getFreezeTime() {
+	return m_fFreezeTime;
+}
+
 //-----------------------------------------------------------------------------
 // Purpose: 
 // Input  : 

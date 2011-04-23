@@ -402,7 +402,16 @@ public:
 	virtual int						Save( ISave &save );
 	virtual int						Restore( IRestore &restore );
 
+	virtual bool isFrozen(void);
+	virtual void setIsFrozen(bool);
+	virtual float getFreezeTime();
+	virtual void Freeze();
+
 private:
+
+	float m_fNormGravity;
+	bool m_bIsFrozen;
+	float m_fFreezeTime;
 
 	int SaveDataDescBlock( ISave &save, datamap_t *dmap );
 	int RestoreDataDescBlock( IRestore &restore, datamap_t *dmap );

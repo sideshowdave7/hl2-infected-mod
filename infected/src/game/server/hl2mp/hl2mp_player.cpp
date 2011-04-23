@@ -1157,7 +1157,7 @@ CBaseEntity* CHL2MP_Player::EntSelectSpawnPoint( void )
 			pLastSpawnPoint = g_pLastSpawn;
 		}
 	}
-
+	
 	pSpot = pLastSpawnPoint;
 	// Randomize the start spot
 	for ( int i = random->RandomInt(1,5); i > 0; i-- )

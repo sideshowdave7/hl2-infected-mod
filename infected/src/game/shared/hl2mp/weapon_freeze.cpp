@@ -348,7 +348,7 @@ void CWeaponFreeze::PrimaryAttack( void )
     {
 	
 		    // This will ignite the player
-			((CHL2MP_Player*)(tr.m_pEnt))->Freeze();
+			tr.m_pEnt->Freeze();
 		
     }
 }

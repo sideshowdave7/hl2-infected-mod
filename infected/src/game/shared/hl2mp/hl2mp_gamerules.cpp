@@ -345,11 +345,11 @@ void CHL2MPRules::Think( void )
 		CBasePlayer *pPlayer = UTIL_PlayerByIndex( i );
 		if (pPlayer != NULL) {
 			m_inumClients++;
-			CHL2MP_Player *mPlayer = (CHL2MP_Player*)pPlayer;
+		
 
-			if (mPlayer->isFrozen()) {
-				if ((mPlayer->getFreezeTime()) + 10 > gpGlobals->curtime) {
-					mPlayer->setIsFrozen(false);
+			if (pPlayer->isFrozen()) {
+				if ((pPlayer->getFreezeTime()) + 10 > gpGlobals->curtime) {
+					pPlayer->setIsFrozen(false);
 				}
 			}
 				

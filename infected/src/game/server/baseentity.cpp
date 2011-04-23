@@ -345,6 +345,26 @@ CBaseEntity::CBaseEntity( bool bServerOnly )
 
 extern bool g_bDisableEhandleAccess;
 
+
+void CBaseEntity::Freeze() {
+		m_fNormGravity = this->GetGravity();
+		setIsFrozen(true);
+		this->m_fFreezeTime = gpGlobals->curtime;
+}
+
+bool CBaseEntity::isFrozen() {
+		return m_bIsFrozen;
+}
+
+void CBaseEntity::setIsFrozen(bool b) {
+	this->m_bIsFrozen = b;
+	if (b) this->SetGravity(20);
+	else this->SetGravity(m_fNormGravity);
+}
+
+float CBaseEntity::getFreezeTime() {
+	return m_fFreezeTime;
+}
 //-----------------------------------------------------------------------------
 // Purpose: See note below
 //-----------------------------------------------------------------------------
