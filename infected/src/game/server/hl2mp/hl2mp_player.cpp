@@ -340,6 +340,10 @@ void CHL2MP_Player::Spawn(void)
 		RemoveEffects( EF_NODRAW );
 		
 		GiveDefaultItems();
+
+		if (GetTeamNumber() == TEAM_REBELS) {
+			this->SetPreventWeaponPickup(true);
+		}
 	}
 
 	RemoveEffects( EF_NOINTERP );
@@ -663,6 +667,7 @@ bool CHL2MP_Player::BumpWeapon( CBaseCombatWeapon *pWeapon )
 	// Can I have this weapon type?
 	if ( !IsAllowedToPickupWeapons() )
 		return false;
+
 
 	if ( pOwner || !Weapon_CanUse( pWeapon ) || !g_pGameRules->CanHavePlayerItem( this, pWeapon ) )
 	{

@@ -645,7 +645,7 @@ bool C_HL2MP_Player::CanSprint( void )
 //-----------------------------------------------------------------------------
 void C_HL2MP_Player::StartSprinting( void )
 {
-	if( m_HL2Local.m_flSuitPower < 10 )
+	if( m_HL2Local.m_flSuitPower < 10 || GetTeamNumber() == TEAM_COMBINE )
 	{
 		// Don't sprint unless there's a reasonable
 		// amount of suit power.
@@ -679,7 +679,7 @@ void C_HL2MP_Player::HandleSpeedChanges( void )
 	if( buttonsChanged & IN_SPEED )
 	{
 		// The state of the sprint/run button has changed.
-		if ( IsSuitEquipped() )
+		if ( IsSuitEquipped()  && GetTeamNumber() == TEAM_REBELS)
 		{
 			if ( !(m_afButtonPressed & IN_SPEED)  && IsSprinting() )
 			{
@@ -687,7 +687,7 @@ void C_HL2MP_Player::HandleSpeedChanges( void )
 			}
 			else if ( (m_afButtonPressed & IN_SPEED) && !IsSprinting() )
 			{
-				if ( CanSprint() )
+				if ( CanSprint())
 				{
 					StartSprinting();
 				}

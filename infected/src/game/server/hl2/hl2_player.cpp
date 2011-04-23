@@ -3123,6 +3123,7 @@ void CHL2_Player::PickupObject( CBaseEntity *pObject, bool bLimitMassAndSize )
 	if ( pObject->HasNPCsOnIt() )
 		return;
 
+
 	PlayerPickupObject( this, pObject );
 }
 
