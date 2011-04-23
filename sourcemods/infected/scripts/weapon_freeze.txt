@@ -1,30 +1,35 @@
-// freeze weapon
+// Freezegun
 
 WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"	"#HL2_StunBaton"
+	"printname"	"#HL2_Shotgun"
 	"viewmodel"				"models/weapons/v_gordonstick.mdl"
-	"playermodel"			"models/weapons/v_gordonstick.mdl"
+	"playermodel"			"models/weapons/w_gordonstick.mdl"
 	"anim_prefix"			"stunbaton"
-	"bucket"				"0"
-	"bucket_position"		"1"
+	"bucket"				"3"
+	"bucket_position"		"4"
 
-	"clip_size"				"-1"
-	"primary_ammo"			"None"
+	"clip_size"				"6"
+	"primary_ammo"			"Buckshot"
 	"secondary_ammo"		"None"
 
-	"weight"				"0"
+	"weight"				"4"
 	"item_flags"			"0"
+	"damage"			"9"
 
 	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
 	SoundData
 	{
 
-		"single_shot"		"Weapon_StunStick.Swing"
-		"melee_miss"		"Weapon_StunStick.Melee_Miss"
-		"melee_hit"			"Weapon_StunStick.Melee_Hit"
-		"melee_hit_world"	"Weapon_StunStick.Melee_HitWorld"
+		"empty"				"Weapon_Shotgun.Empty"
+		"reload"			"Weapon_Shotgun.Reload"
+		"special1"			"Weapon_Shotgun.Special1"
+		"single_shot"		"Weapon_Shotgun.Single"
+		"double_shot"		"Weapon_Shotgun.Double"
+		// NPC WEAPON SOUNDS
+		"reload_npc"		"Weapon_Shotgun.NPC_Reload"
+		"single_shot_npc"	"Weapon_Shotgun.NPC_Single"
 	}
 
 	// Weapon Sprite data is loaded by the Client DLL.
@@ -33,39 +38,28 @@ WeaponData
 		"weapon"
 		{
 				"font"		"WeaponIcons"
-				"character"	"n"
+				"character"	"b"
 		}
 		"weapon_s"
-		{
+		{	
 				"font"		"WeaponIconsSelected"
-				"character"	"n"
+				"character"	"b"
 		}
 		"ammo"
 		{
 				"font"		"WeaponIcons"
-				"character"	"n"
-		}
-		"ammo2"
-		{
-				"file"		"sprites/640hud7"
-				"x"			"48"
-				"y"			"72"
-				"width"		"24"
-				"height"	"24"
+				"character"	"s"
 		}
 		"crosshair"
 		{
-				"file"		"sprites/crosshairs"
-				"x"			"0"
-				"y"			"48"
-				"width"		"24"
-				"height"	"24"
+				"font"		"Crosshairs"
+				"character"	"Q"
 		}
 		"autoaim"
 		{
 				"file"		"sprites/crosshairs"
-				"x"			"48"
-				"y"			"72"
+				"x"			"0"
+				"y"			"48"
 				"width"		"24"
 				"height"	"24"
 		}
