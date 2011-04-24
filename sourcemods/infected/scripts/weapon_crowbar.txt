@@ -7,8 +7,8 @@ WeaponData
 	"viewmodel"				"models\morrowind\dragon\dagger\v_dragondagger.mdl"
 	"playermodel"			"models\morrowind\dragon\dagger\w_dragondagger.mdl"
 	"anim_prefix"			"crowbar"
-	"bucket"				"0"
-	"bucket_position"		"0"
+	"bucket"				"1"
+	"bucket_position"		"1"
 
 	"clip_size"				"-1"
 	"primary_ammo"			"None"
