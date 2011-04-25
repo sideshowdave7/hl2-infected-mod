@@ -120,9 +120,10 @@ void CGrenadeFrag::Detonate() {
 			// do if statements to check what we hit ... add if player is human, etc, etc
 			if ( list[i]->IsPlayer() )
 			{
-			
+				if (list[i]->GetTeamNumber() == TEAM_REBELS) {
 					// This will ignite the player
 					((CBasePlayer*)(list[i]))->Ignite(10.0, false, 10.0, false);
+				}
 			
 			}
 		}
