@@ -461,7 +461,7 @@ void CWeaponFrag::ThrowGrenade( CBasePlayer *pPlayer )
 		int count = UTIL_EntitiesInSphere(list,1024,GetAbsOrigin(),50,MASK_PLAYERSOLID);
  
 		// for each of them
-		for ( int i = 0; i < count; i++ )
+		/*for ( int i = 0; i < count; i++ )
 		{
 			// do if statements to check what we hit ... add if player is human, etc, etc
 			if ( list[i]->IsPlayer() )
@@ -471,7 +471,7 @@ void CWeaponFrag::ThrowGrenade( CBasePlayer *pPlayer )
 						((CHL2MP_Player*)(list[i]))->Ignite(10.0, false, 10.0, false);
 					}
 			}
-		}
+		}*/
 	
 	}
 #endif
