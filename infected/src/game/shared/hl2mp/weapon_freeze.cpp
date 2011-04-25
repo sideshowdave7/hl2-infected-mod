@@ -348,6 +348,7 @@ void CWeaponFreeze::PrimaryAttack( void )
     {
 	
 		    // This will ignite the player
+			tr.m_pEnt->SetAbsVelocity(0);
 			tr.m_pEnt->Freeze();
 			tr.m_pEnt->SetGravity(2000000);
 		
