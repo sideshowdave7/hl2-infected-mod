@@ -260,7 +260,6 @@ void CHL2MP_Player::GiveDefaultItems( void )
 		GiveNamedItem( "weapon_frag" );
 		GiveNamedItem( "weapon_freeze" );
 		GiveNamedItem( "weapon_crowbar" );
-		GiveNamedItem( "weapon_shock" );
 
 	} 
 	//Zombie starting weapons
