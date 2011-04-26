@@ -253,11 +253,14 @@ void CHL2MP_Player::GiveDefaultItems( void )
 	if (this->GetTeamNumber() == TEAM_COMBINE) {
 		CBasePlayer::GiveAmmo( 36, "Buckshot");
 		CBasePlayer::GiveAmmo( 10, "Crossbow");
+		CBasePlayer::GiveAmmo( 2, "Frag");
 
 		GiveNamedItem( "weapon_crossbow" );
 		GiveNamedItem( "weapon_shotgun" );
 		GiveNamedItem( "weapon_frag" );
 		GiveNamedItem( "weapon_freeze" );
+		GiveNamedItem( "weapon_crowbar" );
+		GiveNamedItem( "weapon_shock" );
 
 	} 
 	//Zombie starting weapons
