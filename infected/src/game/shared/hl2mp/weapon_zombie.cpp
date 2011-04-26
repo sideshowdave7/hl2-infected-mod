@@ -26,7 +26,7 @@
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
-#define	ZOMBIE_RANGE	80.0f
+#define	ZOMBIE_RANGE	100.0f
 #define	ZOMBIE_REFIRE	0.5f
 
 
