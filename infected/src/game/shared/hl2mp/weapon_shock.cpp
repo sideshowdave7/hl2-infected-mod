@@ -635,7 +635,7 @@ void CWeaponShock::FireBolt( void )
 
 #ifndef CLIENT_DLL
 
-	CShockBolt *pBolt[3];
+	CCrossbowBolt *pBolt[3];
 
 	//Fires three bolts, one 45 degrees to the left, one 45 degrees to the right, and one straight forward
 	for (int i = 0; i < 3; i++)
@@ -654,7 +654,7 @@ void CWeaponShock::FireBolt( void )
 		
 		AngleVectors(angAiming, &vecAiming);
 
-		pBolt[i] = CShockBolt::BoltCreate( vecSrc, angAiming, GetHL2MPWpnData().m_iPlayerDamage, pOwner );
+		pBolt[i] = CCrossbowBolt::BoltCreate( vecSrc, angAiming, GetHL2MPWpnData().m_iPlayerDamage, pOwner );
 
 		if ( pOwner->GetWaterLevel() == 3 )
 		{
