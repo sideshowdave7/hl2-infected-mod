@@ -27,7 +27,7 @@
 #include "tier0/memdbgon.h"
 
 #define	CROWBAR_RANGE	50.0f
-#define	CROWBAR_REFIRE	1.0f
+#define	CROWBAR_REFIRE	0.7f
 
 
 //-----------------------------------------------------------------------------
