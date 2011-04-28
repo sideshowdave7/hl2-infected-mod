@@ -258,7 +258,7 @@ void CHL2MP_Player::GiveDefaultItems( void )
 		GiveNamedItem( "weapon_crossbow" );
 		GiveNamedItem( "weapon_shotgun" );
 		GiveNamedItem( "weapon_frag" );
-		GiveNamedItem( "weapon_freeze" );
+//		GiveNamedItem( "weapon_freeze" );
 		GiveNamedItem( "weapon_crowbar" );
 
 	} 
