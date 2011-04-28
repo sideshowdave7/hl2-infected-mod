@@ -635,6 +635,7 @@ Vector C_HL2MP_Player::GetAutoaimVector( float flDelta )
 bool C_HL2MP_Player::CanSprint( void )
 {
 	if (GetTeamNumber() == TEAM_COMBINE) {
+
 		return false;
 	}
 	return ( (!m_Local.m_bDucked && !m_Local.m_bDucking) && (GetWaterLevel() != 3) );
@@ -659,7 +660,14 @@ void C_HL2MP_Player::StartSprinting( void )
 	filter.UsePredictionRules();
 	EmitSound( filter, entindex(), "HL2Player.SprintStart" );
 
-	SetMaxSpeed( HL2_SPRINT_SPEED );
+	if(GetTeamNumber() == TEAM_COMBINE )
+	{
+		SetMaxSpeed( HL2_SPRINT_SPEED - 400 );
+	}
+	else
+	{
+		SetMaxSpeed( HL2_SPRINT_SPEED );
+	}
 	m_fIsSprinting = true;
 }
 
@@ -687,7 +695,7 @@ void C_HL2MP_Player::HandleSpeedChanges( void )
 			}
 			else if ( (m_afButtonPressed & IN_SPEED) && !IsSprinting() )
 			{
-				if ( CanSprint())
+				if ( CanSprint() && GetTeamNumber() == TEAM_REBELS)
 				{
 					StartSprinting();
 				}
